@@ -32,8 +32,8 @@ exports.fetch_product = async function(req, res){
             res.send(my_api_response); 
         }
         else {
-            const current_price_value = Product[0].current_price.value;
-            const current_price_currency_code = Product[0].current_price.currency_code;
+            const current_price_value = Product[0].current_price[0].value;
+            const current_price_currency_code = Product[0].current_price[0].currency_code;
     
             // combine pricing info from MongoDB with info from redsky api into my_api_response
             my_api_response.current_price = [{
